@@ -26,7 +26,7 @@ export const LineWidthBtn: React.FC = observer(() => {
     )
 
     return <Dropdown overlay={menu}>
-        <Button>
+        <Button block={true} style={{minHeight: "50px"}}>
             <Line width={`${newImageStore.lineWidth}px`} /> 
         </Button>
     </Dropdown>
