@@ -4,7 +4,7 @@ import { Navigate, Route, Routes } from 'react-router';
 import { useStore } from '.';
 import { LoginPage } from './components/Login/LoginPage';
 import { SignupPage } from './components/Login/SignupPage';
-import { ImagesFeed } from './components/Main/ImagesFeed';
+import { ImagesFeed } from './components/ImagesFeed/ImagesFeed';
 import { NewImage } from './components/NewImage/NewImage';
 
 export const AppRoute: React.FC = observer(() => {

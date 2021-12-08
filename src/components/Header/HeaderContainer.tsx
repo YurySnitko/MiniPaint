@@ -1,19 +1,17 @@
 import { observer } from 'mobx-react-lite';
 import { LogoutBtn } from './LogoutBtn';
-import { Layout } from 'antd';
-import { AppName } from './AppNameDiv.style';
-import { HeaderContent } from './HeaderContent.style';
+import { AppName, HeaderContent, HeaderStld } from './HeaderContainer.style';
 import { useStore } from '../..';
-
-const { Header } = Layout;
+import { SettingsBtn } from './SettingsBtn';
 
 export const HeaderContainer: React.FC = observer(() => {
     const { authStore } = useStore()
 
-    return <Header style={{ position: 'fixed', zIndex: 1, width: '762px' }}>
+    return <HeaderStld>
         <HeaderContent>
             <AppName>MiniPaint</AppName>
-            {authStore.isAuth && <LogoutBtn logout={authStore.logout.bind(authStore)} />}
+            {authStore.isAuth && <LogoutBtn logout={authStore.logout} />}
+            <SettingsBtn />
         </HeaderContent>
-    </Header>
+    </HeaderStld>
 })

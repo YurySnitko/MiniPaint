@@ -1,22 +1,25 @@
 import { observer } from "mobx-react-lite"
-import React, { MouseEventHandler, RefObject, useEffect, useRef, useState } from "react"
+import React, { MouseEventHandler, useEffect, useRef, useState } from "react"
 import { useStore } from "../.."
-import { CanvasContainer } from "./CanvasContainer.style"
+import { CanvasContainer } from "./NewImage.styles";
+import { CanvasRefPropType } from "./NewImage.types";
 
-export const Canvas: React.FC<PropsType> = observer(({canvasRef}) => {
+export const Canvas: React.FC<CanvasRefPropType> = observer(({ canvasRef }) => {
     const { newImageStore } = useStore();
     const contextRef = useRef<CanvasRenderingContext2D | null>(null)
     const [isDrawing, setIsDrawing] = useState<boolean>(false)
-    const [drawingCoordinates, setDrawingCoordinates] = useState({startX: 0, startY: 0})
+    const [drawingCoordinates, setDrawingCoordinates] = useState({ startX: 0, startY: 0 })
 
     useEffect(() => {
-        if (canvasRef.current !== null) {
+        if (canvasRef.current) {
             const canvas = canvasRef.current;
             canvas.parentElement && (canvas.width = canvas.height = canvas.parentElement.clientWidth)
 
             const context = canvas.getContext("2d")
             if (context) {
                 context.lineCap = "round"
+                context.fillStyle = "white"
+                context.fillRect(0, 0, canvas.width, canvas.height)
                 contextRef.current = context
             }
         }
@@ -28,7 +31,7 @@ export const Canvas: React.FC<PropsType> = observer(({canvasRef}) => {
         if (ctx && newImageStore.chosenTool) {
             const { offsetX, offsetY } = nativeEvent
 
-            switch(newImageStore.chosenTool) {
+            switch (newImageStore.chosenTool) {
                 case 'line':
                 case 'pen':
                     ctx.beginPath()
@@ -48,14 +51,14 @@ export const Canvas: React.FC<PropsType> = observer(({canvasRef}) => {
 
     const finishDrawing: MouseEventHandler<HTMLCanvasElement> = ({ nativeEvent }) => {
         const ctx = contextRef.current
-        const {startX, startY} = drawingCoordinates
+        const { startX, startY } = drawingCoordinates
 
         if (ctx && newImageStore.chosenTool) {
             const { offsetX, offsetY } = nativeEvent
             ctx.strokeStyle = newImageStore.chosenColor
             ctx.lineWidth = newImageStore.lineWidth
 
-            switch(newImageStore.chosenTool) {
+            switch (newImageStore.chosenTool) {
                 case 'line':
                     ctx.lineTo(offsetX, offsetY)
                     ctx.stroke()
@@ -74,15 +77,15 @@ export const Canvas: React.FC<PropsType> = observer(({canvasRef}) => {
                     ctx.strokeRect(startX, startY, offsetX - startX, offsetY - startY)
                     break
             }
-            
+
             setIsDrawing(false)
         }
     }
 
-    const draw: MouseEventHandler<HTMLCanvasElement> = ({nativeEvent}) => {
+    const draw: MouseEventHandler<HTMLCanvasElement> = ({ nativeEvent }) => {
         const ctx = contextRef.current
-        if (!isDrawing || !ctx || !newImageStore.chosenTool) return;
-        const {offsetX, offsetY} = nativeEvent
+        if (!isDrawing || !ctx || !newImageStore.chosenTool) { return };
+        const { offsetX, offsetY } = nativeEvent
         ctx.strokeStyle = newImageStore.chosenColor
         ctx.lineWidth = newImageStore.lineWidth
         if (newImageStore.chosenTool === "pen") {
@@ -90,17 +93,13 @@ export const Canvas: React.FC<PropsType> = observer(({canvasRef}) => {
             ctx.stroke()
         }
     }
-    
+
     return <CanvasContainer>
-        <canvas 
+        <canvas
             onMouseDown={startDrawing}
             onMouseUp={finishDrawing}
             onMouseMove={draw}
             ref={canvasRef}>
         </canvas>
-    </CanvasContainer> 
+    </CanvasContainer>
 })
-
-type PropsType = {
-    canvasRef: RefObject<HTMLCanvasElement>
-}

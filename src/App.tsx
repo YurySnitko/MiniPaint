@@ -1,24 +1,23 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import 'antd/dist/antd.css';
-import { Layout } from 'antd';
 import { HeaderContainer } from './components/Header/HeaderContainer';
 import { AppRoute } from './AppRoute';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '.';
+import { AppContent, LayoutStld, FooterStld } from './App.styles';
 
-const { Content, Footer } = Layout;
+const App = observer(() => {
+  const {settingsStore} = useStore()
 
-function App() {
-  return <Layout>
+  return <LayoutStld themeStyle={settingsStore.themeStyle}>
     <HeaderContainer />
-    <Content className="site-layout" style={{ padding: '0 10px', marginTop: 64 }}>
-      <div className="site-layout-background" style={{ padding: 10, minHeight: 380 }}>
+    <AppContent className="site-layout">
         <ToastContainer />
         <AppRoute />
-      </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }}>MiniPaint ©2021</Footer>
-  </Layout>
-}
+    </AppContent>
+    <FooterStld themeStyle={settingsStore.themeStyle}>MiniPaint ©2021</FooterStld>
+  </LayoutStld>
+})
 
 export default App;

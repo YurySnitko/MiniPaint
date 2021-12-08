@@ -22,7 +22,7 @@ export default class AuthStore {
         this.login(email, password);
     }
 
-    async logout() {
+    logout = async () => {
         await authAPI.logout();
         this.isAuth = false;
         this.userId = '';

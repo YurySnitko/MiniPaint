@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyles } from './GlobalStyles.styles';
 import stores from './store/stores';
+import 'antd/dist/antd.css';
+import Theme from './Theme';
 
 const StoreContext = React.createContext(stores);
 
@@ -15,7 +17,9 @@ ReactDOM.render(
     <StoreContext.Provider value={stores}>
       <BrowserRouter>
         <GlobalStyles />
-        <App />
+        <Theme>
+          <App />
+        </Theme>
       </BrowserRouter>
     </StoreContext.Provider>
   </React.StrictMode>,

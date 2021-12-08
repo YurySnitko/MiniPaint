@@ -1,8 +1,8 @@
 import { observer } from "mobx-react-lite"
-import { Button, Dropdown, Menu } from "antd";
-import { Line } from "./Line.style";
+import { Dropdown, Menu } from "antd";
 import { MenuClickEventHandler } from "rc-menu/lib/interface";
 import { useStore } from "../..";
+import { Line, LineBtnStld } from "./Buttons.styles";
 
 export const LineWidthBtn: React.FC = observer(() => {
     const {newImageStore} = useStore();
@@ -26,8 +26,8 @@ export const LineWidthBtn: React.FC = observer(() => {
     )
 
     return <Dropdown overlay={menu}>
-        <Button block={true} style={{minHeight: "50px"}}>
+        <LineBtnStld block={true}>
             <Line width={`${newImageStore.lineWidth}px`} /> 
-        </Button>
+        </LineBtnStld>
     </Dropdown>
 })

@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { Canvas } from "./Canvas"
-import { NewImageContainer } from "./NewImageContainer.style"
-import { Tools } from "./Tools"
+import { NewImageContainer } from "./NewImage.styles"
+import { Tools } from "./Tools/Tools"
 
 export const NewImage = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null)

@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router';
 import loginLogo from '../../assets/loginlogo.png';
 import { Button, Input } from 'antd';
 import { UserAddOutlined, UnlockOutlined, MailOutlined } from '@ant-design/icons';
-import { Container } from './Container.style';
+import { Container } from './Login.styles';
 import { useStore } from '../..';
+import { observer } from 'mobx-react-lite';
 
-export const SignupPage: React.FC = () => {
+export const SignupPage: React.FC = observer(() => {
     const navigate = useNavigate();
-    const { authStore } = useStore();
+    const { authStore, settingsStore } = useStore();
 
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
@@ -18,7 +19,7 @@ export const SignupPage: React.FC = () => {
         navigate("/");
     }, [navigate, authStore])
 
-    return <Container>
+    return <Container themeStyle={settingsStore.themeStyle}>
         <h1>Sign Up</h1>
         <div>
             <img src={loginLogo} alt='login logo' />
@@ -32,4 +33,4 @@ export const SignupPage: React.FC = () => {
             Have an account? <NavLink to='/login'>Log In</NavLink>
         </div>
     </Container>
-}
+})

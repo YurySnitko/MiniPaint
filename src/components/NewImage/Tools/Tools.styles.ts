@@ -1,4 +1,11 @@
+
+import { Input } from 'antd';
 import styled from 'styled-components'
+
+export const Color = styled(Input)`
+    min-height: 50px;
+    padding: 10px;
+`
 
 export const ToolsDiv = styled.div`
     width: 10%;
@@ -8,4 +15,4 @@ export const ToolsDiv = styled.div`
         padding: 10px;
         height: fit-content;
     }
-`;
+`
