@@ -20,4 +20,13 @@ export const CreateImageBtnStld = styled(Button) <CreateImageBtnPropsType>`
 `
 
 export const SaveBtn = styled(Button)`
+    background-color: ${({ theme }) => theme.colors.primary};
+`
+
+export const LogoutBtnStld = styled(Button)`
+    background-color: ${({ theme }) => theme.colors.primary};
+`
+
+export const SettingsBtnStld = styled(Button)`
+    background-color: ${({ theme }) => theme.colors.primary};
 `

@@ -24,4 +24,10 @@ export const Container = styled.div<LoginPropsType>`
             themeStyle === "dark" ? theme.colors.fontLight : theme.colors.fontDark
         };
     }
+
+    & a {
+        color: ${({ theme, themeStyle }) =>
+            themeStyle === "dark" ? theme.colors.btnLink : theme.colors.primary
+        };
+    }
 `;

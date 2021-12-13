@@ -1,8 +1,9 @@
-import { Button, Dropdown, Menu } from 'antd';
+import { Dropdown, Menu } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 import { MenuClickEventHandler } from "rc-menu/lib/interface";
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { useStore } from 'index';
+import { SettingsBtnStld } from './Buttons.styles';
 
 export const SettingsBtn: React.FC = () => {
     const { settingsStore } = useStore()
@@ -25,6 +26,6 @@ export const SettingsBtn: React.FC = () => {
     )
 
     return <Dropdown overlay={menu} trigger={['click']}>
-        <Button type="primary" icon={<SettingOutlined />} />
+        <SettingsBtnStld type="primary" icon={<SettingOutlined />} />
     </Dropdown>
 }

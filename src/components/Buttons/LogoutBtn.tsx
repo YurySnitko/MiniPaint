@@ -1,9 +1,11 @@
-import { Button } from 'antd';
 import { LogoutOutlined } from '@ant-design/icons';
 import { LogoutBtnPropsType } from './Buttons.types';
+import { LogoutBtnStld } from './Buttons.styles';
 
 export const LogoutBtn: React.FC<LogoutBtnPropsType> = ({ logout }) => {
-    return <Button type="primary" onClick={() => logout()} icon={<LogoutOutlined />}>Sign Out</Button>
+    return <LogoutBtnStld type="primary" onClick={() => logout()} icon={<LogoutOutlined />}>
+        Sign Out
+    </LogoutBtnStld>
 }
 
 
