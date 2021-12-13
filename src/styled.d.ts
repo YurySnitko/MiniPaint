@@ -7,6 +7,10 @@ declare module 'styled-components' {
             backgrndLight: string
             fontDark: string
             fontLight: string
+            btnLink: string
+            primary: string
+            blueDark: string
+            grey: string
         }
     }
 }

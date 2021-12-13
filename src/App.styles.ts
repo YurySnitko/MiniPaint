@@ -8,14 +8,20 @@ export const AppContent = styled(Content)`
     min-height: 380px;
 `;
 
-export const FooterStld = styled(Footer)<PropsType>`
-    background-color: ${({ theme, themeStyle }) => themeStyle === "light" ? theme.colors.backgrndLight : theme.colors.backgrndDark};
-    color: ${({ theme, themeStyle }) => themeStyle === "light" ? theme.colors.fontLight : theme.colors.fontDark};
+export const FooterStld = styled(Footer) <PropsType>`
+    background-color: ${({ theme, themeStyle }) =>
+        themeStyle === "light" ? theme.colors.backgrndLight : theme.colors.backgrndDark
+    };
+    color: ${({ theme, themeStyle }) =>
+        themeStyle === "light" ? theme.colors.fontDark : theme.colors.fontLight
+    };
     text-align: center;
 `;
 
-export const LayoutStld = styled(Layout)<PropsType>`
-    background-color: ${({ theme, themeStyle }) => themeStyle === "light" ? theme.colors.backgrndLight : theme.colors.backgrndDark};
+export const LayoutStld = styled(Layout) <PropsType>`
+    background-color: ${({ theme, themeStyle }) =>
+        themeStyle === "light" ? theme.colors.backgrndLight : theme.colors.backgrndDark
+    };
 `;
 
 type PropsType = {

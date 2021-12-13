@@ -1,11 +1,11 @@
 import { observer } from "mobx-react-lite"
 import { Dropdown, Menu } from "antd";
 import { MenuClickEventHandler } from "rc-menu/lib/interface";
-import { useStore } from "../..";
+import { useStore } from "index";
 import { Line, LineBtnStld } from "./Buttons.styles";
 
 export const LineWidthBtn: React.FC = observer(() => {
-    const {newImageStore} = useStore();
+    const { newImageStore } = useStore();
 
     const handleMenuClick: MenuClickEventHandler = (e) => {
         newImageStore.setLineWidth(Number(e.key))
@@ -27,7 +27,7 @@ export const LineWidthBtn: React.FC = observer(() => {
 
     return <Dropdown overlay={menu}>
         <LineBtnStld block={true}>
-            <Line width={`${newImageStore.lineWidth}px`} /> 
+            <Line width={`${newImageStore.lineWidth}px`} />
         </LineBtnStld>
     </Dropdown>
 })

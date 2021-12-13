@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-import loginLogo from '../../assets/loginlogo.png';
+import loginLogo from 'assets/loginlogo.png';
 import { Button, Input } from 'antd';
 import { UserAddOutlined, UnlockOutlined, MailOutlined } from '@ant-design/icons';
 import { Container } from './Login.styles';
-import { useStore } from '../..';
+import { useStore } from 'index';
 import { observer } from 'mobx-react-lite';
 
 export const SignupPage: React.FC = observer(() => {

@@ -2,10 +2,10 @@ import { Button, Dropdown, Menu } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 import { MenuClickEventHandler } from "rc-menu/lib/interface";
 import SubMenu from 'antd/lib/menu/SubMenu';
-import { useStore } from '../..';
+import { useStore } from 'index';
 
 export const SettingsBtn: React.FC = () => {
-    const {settingsStore} = useStore()
+    const { settingsStore } = useStore()
 
     const handleMenuClick: MenuClickEventHandler = (e) => {
         settingsStore.setTheme(e.key === '1' ? "light" : "dark")
@@ -15,7 +15,7 @@ export const SettingsBtn: React.FC = () => {
         <Menu onClick={handleMenuClick}>
             <SubMenu title="Theme">
                 <Menu.Item key="1">
-                    light 
+                    light
                 </Menu.Item>
                 <Menu.Item key="2">
                     dark
@@ -25,6 +25,6 @@ export const SettingsBtn: React.FC = () => {
     )
 
     return <Dropdown overlay={menu} trigger={['click']}>
-            <Button type="primary" icon={<SettingOutlined />} />
-        </Dropdown>
+        <Button type="primary" icon={<SettingOutlined />} />
+    </Dropdown>
 }

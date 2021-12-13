@@ -5,7 +5,9 @@ export const Container = styled.div<LoginPropsType>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: ${({theme, themeStyle}) => themeStyle === "dark" ? theme.colors.fontDark : theme.colors.fontLight};
+    color: ${({ theme, themeStyle }) =>
+        themeStyle === "dark" ? theme.colors.fontLight : theme.colors.fontDark
+    };
 
     & form {
         display: flex;
@@ -18,6 +20,8 @@ export const Container = styled.div<LoginPropsType>`
     }
 
     & h1 {
-        color: ${({theme, themeStyle}) => themeStyle === "dark" ? theme.colors.fontDark : theme.colors.fontLight};
+        color: ${({ theme, themeStyle }) =>
+            themeStyle === "dark" ? theme.colors.fontLight : theme.colors.fontDark
+        };
     }
 `;
