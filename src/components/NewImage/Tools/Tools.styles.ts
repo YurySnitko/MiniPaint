@@ -1,5 +1,4 @@
-
-import { Input } from 'antd';
+import { Input } from 'antd'
 import styled from 'styled-components'
 
 export const Color = styled(Input)`
@@ -7,7 +6,7 @@ export const Color = styled(Input)`
     padding: 10px;
 `
 
-export const ToolsDiv = styled.div`
+export const ToolsContainer = styled.div`
     width: 10%;
 
     & button {

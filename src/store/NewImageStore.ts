@@ -28,9 +28,4 @@ export default class NewImageStore {
         const key = mainAPI.createImageKey(stores.authStore.userId);
         mainAPI.uploadImage(stores.authStore.userId, key, image)
     }
-
-    // async getUsersData() {
-    //     const usersData = await mainAPI.getUsersData();
-    //     runInAction(() => this.usersData = usersData)
-    // }
 }

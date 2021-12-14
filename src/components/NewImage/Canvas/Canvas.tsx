@@ -1,8 +1,8 @@
 import { observer } from "mobx-react-lite"
 import React, { MouseEventHandler, useEffect, useRef, useState } from "react"
-import { useStore } from "../.."
-import { CanvasContainer } from "./NewImage.styles";
-import { CanvasRefPropType } from "./NewImage.types";
+import { useStore } from "index"
+import { CanvasRefPropType } from "../NewImage.types";
+import { CanvasContainer } from "./Canvas.styles";
 
 export const Canvas: React.FC<CanvasRefPropType> = observer(({ canvasRef }) => {
     const { newImageStore } = useStore();

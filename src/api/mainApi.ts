@@ -1,7 +1,7 @@
-import { UsersDataType } from '../store/ImagesFeedStore';
 import { database } from "./firebase";
 import { child, get, push, ref, set } from "@firebase/database";
 import { getToast } from "../lib/getToast";
+import { UsersDataType } from "store/stores.types";
 
 export const mainAPI = {
     createImageKey(userId: string | null) {

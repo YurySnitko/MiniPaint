@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Canvas } from "./Canvas"
+import { Canvas } from "./Canvas/Canvas"
 import { NewImageContainer } from "./NewImage.styles"
 import { Tools } from "./Tools/Tools"
 

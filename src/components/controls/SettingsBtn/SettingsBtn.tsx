@@ -3,7 +3,7 @@ import { SettingOutlined } from '@ant-design/icons';
 import { MenuClickEventHandler } from "rc-menu/lib/interface";
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { useStore } from 'index';
-import { SettingsBtnStld } from './Buttons.styles';
+import { SettingsBtnStld } from './SettingsBtn.styles';
 
 export const SettingsBtn: React.FC = () => {
     const { settingsStore } = useStore()

@@ -1,7 +1,6 @@
-import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import { HeaderContainer } from './components/Header/HeaderContainer';
+import { HeaderContainer } from './components/Header/Header';
 import { AppRoute } from './AppRoute';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '.';

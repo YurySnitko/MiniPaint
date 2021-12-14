@@ -1,22 +1,17 @@
-import { Button } from "antd"
 import { observer } from "mobx-react-lite"
 import { ChangeEventHandler } from "react"
-import { useStore } from "../../.."
-import { BtnIcon } from "./BtnIcon"
-import { LineWidthBtn } from "../../Buttons/LineWidthBtn"
+import { useStore } from "index"
 import { useNavigate } from "react-router"
-import { Color, ToolsDiv } from "./Tools.styles"
+import { Color, ToolsContainer } from "./Tools.styles"
 import { tools } from "./toolsArray"
-import { SaveBtn } from "../../Buttons/Buttons.styles"
 import { CanvasRefPropType } from "../NewImage.types"
+import { SaveBtn } from "components/controls/SaveBtn/SaveBtn"
+import { ToolBtn } from "components/controls/ToolBtn/ToolBtn"
+import { LineWidthBtn } from "components/controls/LineWidthBtn/LineWidthBtn"
 
 export const Tools: React.FC<CanvasRefPropType> = observer(({ canvasRef }) => {
     const { newImageStore } = useStore();
     const navigate = useNavigate();
-
-    const handleClick = (tool: string) => {
-        newImageStore.setChosenTool(tool);
-    }
 
     const onColorChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         newImageStore.setChosenColor(e.currentTarget.value)
@@ -29,14 +24,10 @@ export const Tools: React.FC<CanvasRefPropType> = observer(({ canvasRef }) => {
         }
     }
 
-    return <ToolsDiv>
-        {tools.map(tool => {
-            return <Button onClick={() => handleClick(tool.action)} block={true}>
-                <BtnIcon image={tool.image} />
-            </Button>
-        })}
+    return <ToolsContainer>
+        {tools.map(tool => <ToolBtn key={tool.action} action={tool.action} image={tool.image} />)}
         <Color type="color" onChange={onColorChange} value={newImageStore.chosenColor} />
         <LineWidthBtn />
-        <SaveBtn type="primary" onClick={saveImage} block={true}>Save</SaveBtn>
-    </ToolsDiv>
+        <SaveBtn saveImage={saveImage} />
+    </ToolsContainer>
 })

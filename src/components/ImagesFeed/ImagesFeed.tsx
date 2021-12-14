@@ -4,7 +4,7 @@ import { SelectValue } from "antd/lib/select";
 import { Option } from "antd/lib/mentions";
 import { ImagesContainer, Image, FilterContainer, SelectStld } from "./ImagesFeed.styles";
 import { useStore } from "index";
-import { CreateImageBtn } from "components/Buttons/CreateImageBtn";
+import { CreateImageBtn } from "components/controls/CreateImageBtn/CreateImageBtn";
 
 export const ImagesFeed: React.FC = observer(() => {
     const { imagesFeedStore, settingsStore } = useStore();

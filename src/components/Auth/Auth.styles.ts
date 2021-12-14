@@ -1,4 +1,4 @@
-import { LoginPropsType } from './Login.types';
+import { LoginPropsType } from './Auth.types';
 import styled from 'styled-components'
 
 export const Container = styled.div<LoginPropsType>`

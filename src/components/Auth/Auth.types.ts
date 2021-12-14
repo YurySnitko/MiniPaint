@@ -1,4 +1,4 @@
-import { ThemeType } from 'store/SettingsStore';
+import { ThemeType } from "store/stores.types";
 
 export type LoginPropsType = {
     themeStyle: ThemeType

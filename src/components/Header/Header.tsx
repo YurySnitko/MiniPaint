@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
-import { LogoutBtn } from '../Buttons/LogoutBtn';
-import { AppName, HeaderContent, HeaderStld } from './HeaderContainer.style';
+import { LogoutBtn } from '../controls/LogoutBtn/LogoutBtn';
+import { AppName, HeaderContent, HeaderStld } from './Header.style';
 import { useStore } from 'index';
-import { SettingsBtn } from '../Buttons/SettingsBtn';
+import { SettingsBtn } from '../controls/SettingsBtn/SettingsBtn';
 
 export const HeaderContainer: React.FC = observer(() => {
     const { authStore } = useStore()

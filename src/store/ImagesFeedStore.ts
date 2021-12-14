@@ -1,6 +1,7 @@
 import { mainAPI } from '../api/mainApi';
 import { makeAutoObservable, runInAction, toJS } from "mobx";
 import { SelectValue } from 'antd/lib/select';
+import { UserDataType, UsersDataType } from './stores.types';
 
 export default class ImagesFeedStore {
     usersData = {} as UsersDataType
@@ -32,13 +33,4 @@ export default class ImagesFeedStore {
     get users() {
         return this.usersData ? Object.keys(this.usersData) : [];
     }
-}
-
-export type UsersDataType = {
-    [key: string]: UserDataType
-}
-
-type UserDataType = {
-    email: string
-    images: {[key: string]: string}
 }

@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite"
 import { Dropdown, Menu } from "antd";
 import { MenuClickEventHandler } from "rc-menu/lib/interface";
 import { useStore } from "index";
-import { Line, LineBtnStld } from "./Buttons.styles";
+import { Line, LineBtnStld } from "./LineWidthBtn.styles";
 
 export const LineWidthBtn: React.FC = observer(() => {
     const { newImageStore } = useStore();

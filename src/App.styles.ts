@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 import { Content, Footer } from 'antd/lib/layout/layout';
-import { ThemeType } from './store/SettingsStore';
+
 import { Layout } from 'antd';
+import { ThemeType } from 'store/stores.types';
 
 export const AppContent = styled(Content)`
     padding: 10px 20px;
     min-height: 380px;
 `;
 
-export const FooterStld = styled(Footer) <PropsType>`
+export const FooterStld = styled(Footer) <{themeStyle: ThemeType}>`
     background-color: ${({ theme, themeStyle }) =>
         themeStyle === "light" ? theme.colors.backgrndLight : theme.colors.backgrndDark
     };

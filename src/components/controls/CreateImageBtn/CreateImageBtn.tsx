@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router"
-import { CreateImageBtnStld } from "./Buttons.styles"
 import { PlusOutlined } from '@ant-design/icons'
 import { useStore } from "index";
 import { observer } from "mobx-react-lite";
+import { CreateImageBtnStld } from "./CreateImageBtn.styles";
 
 
 export const CreateImageBtn = observer(() => {
