@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx"
-import { ThemeType } from "./stores.types"
+import { ThemeType } from "./stores.interfaces"
 
 export default class SettingsStore {
     themeStyle = "light" as ThemeType

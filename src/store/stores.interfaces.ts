@@ -1,8 +1,8 @@
-export type UsersDataType = {
-    [key: string]: UserDataType
+export interface IUsersData {
+    [key: string]: IUserData
 }
 
-export type UserDataType = {
+export interface IUserData {
     email: string
     images: {[key: string]: string}
 }

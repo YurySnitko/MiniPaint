@@ -4,12 +4,12 @@ import { useStore } from "index"
 import { useNavigate } from "react-router"
 import { Color, ToolsContainer } from "./Tools.styles"
 import { tools } from "./toolsArray"
-import { CanvasRefPropType } from "../NewImage.types"
-import { SaveBtn } from "components/controls/SaveBtn/SaveBtn"
-import { ToolBtn } from "components/controls/ToolBtn/ToolBtn"
-import { LineWidthBtn } from "components/controls/LineWidthBtn/LineWidthBtn"
+import { SaveBtn } from "controls/SaveBtn/SaveBtn"
+import { ToolBtn } from "controls/ToolBtn/ToolBtn"
+import { LineWidthBtn } from "controls/LineWidthBtn/LineWidthBtn"
+import { ICanvasRefProps } from "../NewImage.interfaces"
 
-export const Tools: React.FC<CanvasRefPropType> = observer(({ canvasRef }) => {
+export const Tools: React.FC<ICanvasRefProps> = observer(({ canvasRef }) => {
     const { newImageStore } = useStore();
     const navigate = useNavigate();
 

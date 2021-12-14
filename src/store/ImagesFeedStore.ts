@@ -1,10 +1,10 @@
 import { mainAPI } from '../api/mainApi';
 import { makeAutoObservable, runInAction, toJS } from "mobx";
 import { SelectValue } from 'antd/lib/select';
-import { UserDataType, UsersDataType } from './stores.types';
+import { IUserData, IUsersData } from './stores.interfaces';
 
 export default class ImagesFeedStore {
-    usersData = {} as UsersDataType
+    usersData = {} as IUsersData
     chosenUserId = '' 
 
     constructor() {
@@ -25,7 +25,7 @@ export default class ImagesFeedStore {
             return Object.entries(toJS(this.usersData)[this.chosenUserId].images)
         } else {
             const arr: string[][] = [];
-            this.usersData && Object.values(toJS(this.usersData)).forEach((e: UserDataType) => arr.push(...Object.entries(e.images)));
+            this.usersData && Object.values(toJS(this.usersData)).forEach((e: IUserData) => arr.push(...Object.entries(e.images)));
             return arr;
         }
     }

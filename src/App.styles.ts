@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 import { Content, Footer } from 'antd/lib/layout/layout';
-
 import { Layout } from 'antd';
-import { ThemeType } from 'store/stores.types';
+import { IAppProps } from 'App.interfaces';
 
 export const AppContent = styled(Content)`
     padding: 10px 20px;
     min-height: 380px;
 `;
 
-export const FooterStld = styled(Footer) <{themeStyle: ThemeType}>`
+export const FooterStld = styled(Footer) <IAppProps>`
     background-color: ${({ theme, themeStyle }) =>
         themeStyle === "light" ? theme.colors.backgrndLight : theme.colors.backgrndDark
     };
@@ -19,12 +18,8 @@ export const FooterStld = styled(Footer) <{themeStyle: ThemeType}>`
     text-align: center;
 `;
 
-export const LayoutStld = styled(Layout) <PropsType>`
+export const LayoutStld = styled(Layout) <IAppProps>`
     background-color: ${({ theme, themeStyle }) =>
         themeStyle === "light" ? theme.colors.backgrndLight : theme.colors.backgrndDark
     };
 `;
-
-type PropsType = {
-    themeStyle: ThemeType
-}

@@ -1,6 +1,6 @@
-import { ImagePropsType } from './ImagesFeed.types';
 import { Select } from 'antd';
 import styled from 'styled-components'
+import { IImageProps } from './ImagesFeed.interfaces';
 
 export const ImagesContainer = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ export const ImagesContainer = styled.div`
     padding: 20px 0;
 `;
 
-export const Image = styled.img<ImagePropsType>`
+export const Image = styled.img<IImageProps>`
     display: block;
     border: 2px solid ${({ theme, themeStyle }) =>
         themeStyle === "light" ? theme.colors.grey : theme.colors.blueDark

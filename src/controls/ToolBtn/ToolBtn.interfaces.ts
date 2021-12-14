@@ -1,4 +1,4 @@
-export type ToolBtnPropsType = {
+export interface IToolBtnProps {
     action: string
     image: string
 }

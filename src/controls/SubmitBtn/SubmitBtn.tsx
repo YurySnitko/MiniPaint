@@ -1,7 +1,7 @@
 import { BaseBtn } from "../BaseBtn/BaseBtn"
-import { SubmitBtnPropsType } from "./SubmitBtn.types"
+import { ISubmitBtnProps } from "./SubmitBtn.interfaces"
 
-export const SubmitBtn: React.FC<SubmitBtnPropsType> = ({ children, icon }) => {
+export const SubmitBtn: React.FC<ISubmitBtnProps> = ({ children, icon }) => {
     return <BaseBtn block={true} htmlType="submit" icon={icon}>
         {children}
     </BaseBtn>

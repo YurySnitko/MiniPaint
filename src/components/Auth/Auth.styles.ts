@@ -1,7 +1,7 @@
-import { LoginPropsType } from './Auth.types';
+import { IAuthProps } from './Auth.interfaces'
 import styled from 'styled-components'
 
-export const Container = styled.div<LoginPropsType>`
+export const Container = styled.div<IAuthProps>`
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -7,7 +7,7 @@ import { UserAddOutlined, UnlockOutlined, MailOutlined } from '@ant-design/icons
 import { Container } from '../Auth.styles';
 import { useStore } from 'index';
 import { observer } from 'mobx-react-lite';
-import { SubmitBtn } from 'components/controls/SubmitBtn/SubmitBtn';
+import { SubmitBtn } from 'controls/SubmitBtn/SubmitBtn';
 
 export const Signup: React.FC = observer(() => {
     const navigate = useNavigate();

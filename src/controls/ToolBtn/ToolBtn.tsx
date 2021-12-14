@@ -1,9 +1,9 @@
 import { Button } from "antd";
 import { useStore } from "index";
-import { ToolBtnPropsType } from "./ToolBtn.types"
+import { IToolBtnProps } from "./ToolBtn.interfaces"
 import { ToolIcon } from "./ToolIcon/ToolIcon";
 
-export const ToolBtn: React.FC<ToolBtnPropsType> = ({ action, image }) => {
+export const ToolBtn: React.FC<IToolBtnProps> = ({ action, image }) => {
     const { newImageStore } = useStore();
 
     const handleClick = () => {
