@@ -2,14 +2,14 @@ import { observer } from "mobx-react-lite"
 import { ChangeEventHandler } from "react"
 import { useStore } from "index"
 import { useNavigate } from "react-router"
-import { Color, ToolsContainer } from "./Tools.styles"
+import { Color, ToolsContainer } from "./CanvasTools.styles"
 import { tools } from "./toolsArray"
 import { SaveBtn } from "controls/SaveBtn/SaveBtn"
 import { ToolBtn } from "controls/ToolBtn/ToolBtn"
 import { LineWidthBtn } from "controls/LineWidthBtn/LineWidthBtn"
-import { ICanvasRefProps } from "../NewImage.interfaces"
+import { CanvasRefProps } from "../NewImage/NewImage.interfaces"
 
-export const Tools: React.FC<ICanvasRefProps> = observer(({ canvasRef }) => {
+export const Tools: React.FC<CanvasRefProps> = observer(({ canvasRef }) => {
     const { newImageStore } = useStore();
     const navigate = useNavigate();
 

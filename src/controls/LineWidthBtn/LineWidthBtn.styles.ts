@@ -1,8 +1,8 @@
 import { Button } from "antd"
 import styled from "styled-components"
-import { LinePropsType } from "./LineWidthBtn.types"
+import { LineProps } from "./LineWidthBtn.interfaces"
 
-export const Line = styled.div<LinePropsType>`
+export const Line = styled.div<LineProps>`
     display: block;
     content: '';
     border-top: ${({ width }) => width} solid black;

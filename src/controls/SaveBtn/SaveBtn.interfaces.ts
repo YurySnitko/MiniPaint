@@ -1,5 +1,5 @@
-import { IBaseBtnProps } from "controls/BaseBtn/BaseBtn.interfaces";
+import { BaseBtnProps } from "controls/BaseBtn/BaseBtn.interfaces";
 
-export interface ISaveBtnProps extends IBaseBtnProps {
+export interface SaveBtnProps extends BaseBtnProps {
     saveImage: () => void
 }

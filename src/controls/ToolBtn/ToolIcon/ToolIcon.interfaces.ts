@@ -1,3 +1,3 @@
-export interface IToolIconProps {
+export interface ToolIconProps {
     image: string
 }

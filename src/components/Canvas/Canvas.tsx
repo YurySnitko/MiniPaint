@@ -2,9 +2,9 @@ import { observer } from "mobx-react-lite"
 import React, { MouseEventHandler, useEffect, useRef, useState } from "react"
 import { useStore } from "index"
 import { CanvasContainer } from "./Canvas.styles";
-import { ICanvasRefProps } from "../NewImage.interfaces";
+import { CanvasRefProps } from "../NewImage/NewImage.interfaces";
 
-export const Canvas: React.FC<ICanvasRefProps> = observer(({ canvasRef }) => {
+export const Canvas: React.FC<CanvasRefProps> = observer(({ canvasRef }) => {
     const { newImageStore } = useStore();
     const contextRef = useRef<CanvasRenderingContext2D | null>(null)
     const [isDrawing, setIsDrawing] = useState<boolean>(false)

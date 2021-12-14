@@ -1,5 +1,5 @@
 import { RefObject } from 'react';
 
-export interface ICanvasRefProps {
+export interface CanvasRefProps {
     canvasRef: RefObject<HTMLCanvasElement>
 }

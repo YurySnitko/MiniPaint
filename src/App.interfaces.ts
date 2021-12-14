@@ -1,5 +1,5 @@
 import { ThemeType } from 'store/stores.interfaces';
 
-export interface IAppProps {
+export interface AppProps {
     themeStyle: ThemeType
 }

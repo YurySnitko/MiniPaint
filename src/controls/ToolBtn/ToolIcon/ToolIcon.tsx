@@ -1,6 +1,6 @@
 import { Img } from "./ToolIcon.styles"
-import { IToolIconProps } from "./ToolIcon.interfaces"
+import { ToolIconProps } from "./ToolIcon.interfaces"
 
-export const ToolIcon: React.FC<IToolIconProps> = ({ image }) => {
+export const ToolIcon: React.FC<ToolIconProps> = ({ image }) => {
     return <Img src={image} alt="button logo" />
 }

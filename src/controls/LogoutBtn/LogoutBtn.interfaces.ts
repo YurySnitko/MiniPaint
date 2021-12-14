@@ -1,5 +1,5 @@
-import { IBaseBtnProps } from "controls/BaseBtn/BaseBtn.interfaces";
+import { BaseBtnProps } from "controls/BaseBtn/BaseBtn.interfaces";
 
-export interface ILogoutBtnProps extends IBaseBtnProps {
+export interface LogoutBtnProps extends BaseBtnProps {
     logout: () => void
 }

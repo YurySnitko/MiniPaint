@@ -1,5 +1,5 @@
 import { ThemeType } from "store/stores.interfaces";
 
-export type ICreateImageBtnProps = {
+export type CreateImageBtnProps = {
     themeStyle: ThemeType
 }

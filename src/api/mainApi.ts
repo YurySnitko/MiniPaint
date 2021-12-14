@@ -1,7 +1,7 @@
 import { database } from "./firebase";
 import { child, get, push, ref, set } from "@firebase/database";
 import { getToast } from "../lib/getToast";
-import { IUsersData } from "store/stores.interfaces";
+import { UsersData } from "store/stores.interfaces";
 
 export const mainAPI = {
     createImageKey(userId: string | null) {
@@ -15,7 +15,7 @@ export const mainAPI = {
             .then(snapshot => snapshot.exists() && snapshot.val())
             .catch(err => err && getToast(err));
     },
-    getUsersData(): Promise<IUsersData> {
+    getUsersData(): Promise<UsersData> {
         return get(child(ref(database), `users/`))
             .then(snapshot => snapshot.exists() && snapshot.val())
             .catch(err => err && getToast(err));

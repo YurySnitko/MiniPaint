@@ -1,5 +1,5 @@
 import { ThemeType } from "store/stores.interfaces";
 
-export interface IImageProps {
+export interface ImageProps {
     themeStyle: ThemeType
 }

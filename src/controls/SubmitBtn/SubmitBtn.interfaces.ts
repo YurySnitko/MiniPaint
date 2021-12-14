@@ -1,5 +1,5 @@
-import { IBaseBtnProps } from 'controls/BaseBtn/BaseBtn.interfaces';
+import { BaseBtnProps } from 'controls/BaseBtn/BaseBtn.interfaces';
 
-export interface ISubmitBtnProps extends IBaseBtnProps {
+export interface SubmitBtnProps extends BaseBtnProps {
     icon: React.ReactNode
 }
