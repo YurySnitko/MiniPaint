@@ -1,3 +1,3 @@
 export interface LineProps {
-    width: string
+  width: string;
 }

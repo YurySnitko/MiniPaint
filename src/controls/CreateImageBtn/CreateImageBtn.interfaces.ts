@@ -1,5 +1,5 @@
-import { ThemeType } from "store/stores.interfaces";
+import { ThemeType } from 'store/Stores/stores.interfaces';
 
 export type CreateImageBtnProps = {
-    themeStyle: ThemeType
-}
+  themeStyle: ThemeType;
+};

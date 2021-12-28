@@ -1,4 +1,4 @@
 export interface ToolBtnProps {
-    action: string
-    image: string
+  action: string;
+  image: string;
 }

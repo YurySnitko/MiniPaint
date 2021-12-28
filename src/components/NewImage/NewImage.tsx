@@ -1,13 +1,15 @@
-import { useRef } from "react"
-import { Canvas } from "../Canvas/Canvas"
-import { NewImageContainer } from "./NewImage.styles"
-import { Tools } from "../CanvasTools/CanvasTools"
+import React, { useRef } from 'react';
+import { Canvas } from '../Canvas/Canvas';
+import { NewImageContainer } from './NewImage.styles';
+import { Tools } from '../CanvasTools/CanvasTools';
 
-export const NewImage = () => {
-    const canvasRef = useRef<HTMLCanvasElement | null>(null)
+export const NewImage: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-    return <NewImageContainer>
-        <Tools canvasRef={canvasRef} />
-        <Canvas canvasRef={canvasRef} />
+  return (
+    <NewImageContainer>
+      <Tools canvasRef={canvasRef} />
+      <Canvas canvasRef={canvasRef} />
     </NewImageContainer>
-}
+  );
+};

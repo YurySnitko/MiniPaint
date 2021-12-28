@@ -3,15 +3,18 @@ import { LogoutBtn } from '../../controls/LogoutBtn/LogoutBtn';
 import { AppName, HeaderContent, HeaderStld } from './Header.style';
 import { useStore } from 'index';
 import { SettingsBtn } from '../../controls/SettingsBtn/SettingsBtn';
+import React from 'react';
 
 export const HeaderContainer: React.FC = observer(() => {
-    const { authStore } = useStore()
+  const { authStore } = useStore();
 
-    return <HeaderStld>
-        <HeaderContent>
-            <AppName>MiniPaint</AppName>
-            {authStore.isAuth && <LogoutBtn logout={authStore.logout} />}
-            <SettingsBtn />
-        </HeaderContent>
+  return (
+    <HeaderStld>
+      <HeaderContent>
+        <AppName>MiniPaint</AppName>
+        {authStore.isAuth && <LogoutBtn logout={authStore.logout} />}
+        <SettingsBtn />
+      </HeaderContent>
     </HeaderStld>
-})
+  );
+});

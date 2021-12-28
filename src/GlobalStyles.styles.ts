@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     html {
@@ -12,4 +12,4 @@ export const GlobalStyles = createGlobalStyle`
         max-width: 762px;
         font-family: 'Nunito Sans', sans-serif;
     }
-`
+`;

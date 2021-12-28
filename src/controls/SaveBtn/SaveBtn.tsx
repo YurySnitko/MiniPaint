@@ -1,6 +1,11 @@
-import { BaseBtn } from "../BaseBtn/BaseBtn"
-import { SaveBtnProps } from "./SaveBtn.interfaces"
+import React from 'react';
+import { BaseBtn } from '../BaseBtn/BaseBtn';
+import { SaveBtnProps } from './SaveBtn.interfaces';
 
 export const SaveBtn: React.FC<SaveBtnProps> = ({ saveImage }) => {
-    return <BaseBtn onclick={saveImage} block={true}>Save</BaseBtn>
-}
+  return (
+    <BaseBtn onclick={saveImage} block={true}>
+      Save
+    </BaseBtn>
+  );
+};
