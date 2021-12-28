@@ -1,7 +1,7 @@
 import { database } from './firebase';
 import { child, get, push, ref, set } from '@firebase/database';
 import { getToast } from '../lib/getToast';
-import { UsersData } from 'store/Stores/stores.interfaces';
+import { UsersData } from 'store/stores.interfaces';
 
 export const mainAPI = {
   createImageKey(userId: string | null): string | null {

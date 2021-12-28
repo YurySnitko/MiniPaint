@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { mainAPI } from 'api/mainApi';
-import stores from 'store/Stores/stores';
+import stores from 'store/stores';
 
 export default class NewImageStore {
   chosenTool = '';

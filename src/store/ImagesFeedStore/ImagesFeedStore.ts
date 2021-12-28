@@ -1,7 +1,7 @@
 import { mainAPI } from 'api/mainApi';
 import { makeAutoObservable, runInAction, toJS } from 'mobx';
 import { SelectValue } from 'antd/lib/select';
-import { UserData, UsersData } from '../Stores/stores.interfaces';
+import { UserData, UsersData } from '../stores.interfaces';
 
 export default class ImagesFeedStore {
   usersData = {} as UsersData;

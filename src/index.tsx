@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyles } from './GlobalStyles.styles';
 import 'antd/dist/antd.css';
 import Theme from './Theme';
-import stores from 'store/Stores/stores';
-import { StoreType } from 'store/Stores/stores.interfaces';
+import stores from 'store/stores';
+import { StoreType } from 'store/stores.interfaces';
 
 const StoreContext = React.createContext<StoreType>(stores);
 
